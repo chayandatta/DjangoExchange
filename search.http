@@ -1,0 +1,18 @@
+# curl -X POST --location "http://localhost:8000/api/v1/search/"
+#    -H "Content-Type: application/x-www-form-urlencoded"
+#    -d "page=1&pagesize=15&fromdate=&todate=&min=&max=&order=&sort=&q=&accepted=&answers=&body=&closed=&migrated=&notice=&nottagged=&tagged=&title=&user=&url=&views=&wiki="
+POST http://localhost:8000/api/v1/search/
+Content-Type: application/x-www-form-urlencoded
+
+page=1&pagesize=15&fromdate=&todate=&min=&max=&order=&sort=&q=&accepted=&answers=&body=&closed=&migrated=&notice=&nottagged=&tagged=&title=&user=&url=&views=&wiki=
+
+###
+
+
+###
+### GET request
+GET http://localhost:8000/api/v1/search/
+Accept: application/json
+
+
+

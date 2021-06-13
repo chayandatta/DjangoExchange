@@ -1,7 +1,7 @@
 from django.urls import path, include
 
-from . import views
+from .views import django_xchange
 
 urlpatterns = [
-    path('api/v1/search/', views.django_xchange, name='djangoXchange'),
+    path('api/v1/search/', django_xchange, name='djangoXchange'),
 ]
