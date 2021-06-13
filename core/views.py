@@ -11,6 +11,8 @@ from rest_framework import status, serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import DjangoExchangeApi
+from .models import ExchangeModel
+from bunch import bunchify
 
 requests_cache.install_cache('django_exchange_cache', backend='sqlite', expire_after=180)
 
@@ -76,6 +78,7 @@ def django_xchange(request):
                     }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             else:
                 try:
+                    save_data(request)
                     data = resp.json()
                     return JsonResponse({
                         'statusCode': 200,
@@ -92,3 +95,32 @@ def django_xchange(request):
                 'statusCode': 500,
                 'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+def save_data(request):
+    exchange_obj = ExchangeModel(
+        page_no=request.POST['page'],
+        page_size=request.POST['pagesize'],
+        from_date=request.POST['fromdate'],
+        to_date=request.POST['todate'],
+        order_by=request.POST['order'],
+        min_date=request.POST['min'],
+        max_date=request.POST['max'],
+        sort_by=request.POST['sort'],
+        question=request.POST['q'],
+        is_accepted=request.POST['accepted'],
+        no_of_answers=request.POST['answers'],
+        body=request.POST['body'],
+        is_closed=request.POST['closed'],
+        is_migrated=request.POST['migrated'],
+        notice=request.POST['notice'],
+        not_tagged=request.POST['nottagged'],
+        tagged=request.POST['tagged'],
+        title=request.POST['title'],
+        user=request.POST['user'],
+        url=request.POST['url'],
+        views=request.POST['views'],
+        wiki=request.POST['wiki'])
+
+    exchange_obj.save()
+
