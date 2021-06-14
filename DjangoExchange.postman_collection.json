@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "b8036457-61ac-45f4-b4a2-5b39d8a4ee0e",
+		"name": "DjangoExchange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/v1/search/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "page",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "pagesize",
+							"value": "15",
+							"type": "text"
+						},
+						{
+							"key": "fromdate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "todate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "min",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "max",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sort",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "q",
+							"value": "django",
+							"type": "text"
+						},
+						{
+							"key": "accepted",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "answers",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "closed",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "migrated",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "notice",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nottagged",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "tagged",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "views",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "wiki",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/search/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"search",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
